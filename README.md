@@ -1,0 +1,14 @@
+# GameLibrary-MVC-Application
+An MVC application created for SPC's ASP.NET Programming with C# course. The purpose of this project is to give users a platform to share and explore video game reviews in an organized and interactive way. Users will be able to submit new games to the library/database, write their own reviews, or browse through existing titles to see what others have said about games they may be interested in.
+
+## 📅 Project Roadmap
+
+| Week | Concept | Feature | Goal | Acceptance Criteria | Evidence in README.md | Test Plan |
+|------|----------|----------|------|----------------------|------------------------|------------|
+| 10 | Modeling | Create `Game` and `Review` entities | App can store games and allow users to leave reviews. | [ ] Games table created <br> [ ] Reviews table created <br> [ ] Relationship works | Implemented code; README write-up; screenshots as needed | Run migration; verify DB tables exist |
+| 11 | Separation of Concerns / DI | Add `IGameService` to calculate average rating | Move logic out of controller into a service. | [ ] Service registered in DI <br> [ ] Controller uses constructor injection <br> [ ] Average rating returned correctly | Implemented code; README write-up; screenshots as needed | Call endpoint; verify average ratings display properly |
+| 12 | CRUD | Add Create/Edit forms for games and reviews | Users can add or edit games, and optionally post reviews. | [ ] Form displays <br> [ ] Validation messages show <br> [ ] Changes save to DB | Implemented code; README write-up; screenshots as needed | Add new game, edit it, post review, confirm DB update |
+| 13 | Diagnostics | Add `/healthz` endpoint | App reports if the games database is reachable. | [ ] Healthy when DB up <br> [ ] Unhealthy when DB down | Implemented code; README write-up; screenshots as needed | Stop DB and hit `/healthz` |
+| 14 | Logging | Log every new review submission | Record structured logs whenever users submit or edit reviews. | [ ] Log message created <br> [ ] Contains game ID, review ID, and user info | Implemented code; README write-up; screenshots as needed | Submit/edit a review; verify structured log output |
+| 15 | Stored Procedures | Call SP: Top 5 highest-rated games | Display leaderboard of games by average review rating. | [ ] SP executes <br> [ ] Results displayed | Implemented code; README write-up; screenshots as needed | Run SP in app and DB; compare results |
+| 16 | Deployment | Deploy app to Azure App Service | Make the application accessible in the cloud with production settings. | [ ] App Service created <br> [ ] App builds and runs on Azure <br> [ ] `/healthz` reachable <br> [ ] One functional path works | Implemented code; README write-up; screenshots as needed | Visit public URL; confirm health endpoint and main page load |
