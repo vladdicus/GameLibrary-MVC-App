@@ -1,5 +1,6 @@
 using GameLibrary.Data;
 using Microsoft.EntityFrameworkCore;
+using GameLibrary.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 var app = builder.Build();
 
