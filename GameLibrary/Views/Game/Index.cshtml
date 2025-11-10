@@ -1,0 +1,28 @@
+﻿@model IEnumerable<GameLibrary.Models.Game>
+
+<h2>Game Library</h2>
+<p><a asp-action="Create" class="btn btn-success">Add Game</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Platform</th>
+            <th>Release Year</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var g in Model)
+        {
+            <tr>
+                <td>@g.Title</td>
+                <td>@g.Platform</td>
+                <td>@g.ReleaseDate</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@g.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
